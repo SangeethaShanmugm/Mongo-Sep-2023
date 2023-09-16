@@ -224,3 +224,60 @@ db.counters.insert({
     })
 
 
+
+
+# Embedded document
+
+>> One to One
+{
+    _id:ObjectId("43546"),
+    name:"jack",
+    job:"Developer",
+    address:{
+        street: "876 test street",
+        city:"New York",
+        pobox:77455
+    }
+
+}
+
+
+>> one to Many
+
+
+{
+    _id:ObjectId("43546"),
+    name:"jack",
+    job:"Developer",
+    address:[
+        {
+        street: "876 test street",
+        city:"New York",
+        pobox:77455,
+        type:"Permanent"
+    },
+    {
+        street: "876 test street",
+        city:"London",
+        pobox:77455,
+        type:"Temporary"
+    }
+    ]
+
+}
+
+
+# Remove/ Delete 
+
+# delete records
+
+db.users.deleteOne({_id: "64fdefd68105d59859fa0588" }) ❌
+
+db.users.deleteOne({"_id": ObjectId("64fdefd68105d59859fa0588") })  ✅
+
+# delete collection
+
+db.users.drop()
+
+//use dbName
+db.dropDatabase()

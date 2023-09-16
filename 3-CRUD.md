@@ -1,0 +1,1 @@
+db.restaurant.find().pretty()
