@@ -38,19 +38,19 @@ rs.add("127.0.0.1:2002)
 
 
 //windows
-
+//step-1
 mkdir data/rs1
 mkdir data/rs2
 mkdir data/rs3
 
-
+//step-2 => open 3 cmd prompt
 mongod --port 2001 --dbpath c:\data\rs1 --replSet --sangeetha --oplogSize 128
 
 mongod --port 2002 --dbpath c:\data\rs2 --replSet --sangeetha --oplogSize 128
 
 mongod --port 2003 --dbpath c:\data\rs3 --replSet --sangeetha --oplogSize 128
 
-
+//step-3 => open 3 cmd prompt
 mongo --port 2001
 
 mongo --port 2002
@@ -59,7 +59,7 @@ mongo --port 2003
 
 mongod --port 2001 --dbpath /data/rs1 --replSet --sangeetha --bind_ip 10.0
 
-
+//step-4 => got to mongo --port 2001 cmd
 rs.status() => check status of rs
 rs.initiate() => create a primary 
 rs.add("127.0.0.1:2002")
