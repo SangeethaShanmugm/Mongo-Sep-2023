@@ -70,6 +70,7 @@ rs.add({ _id:4, host:"localhost:27017", priority: 1}) => add priority
 rs.add({ _id:4, host:"localhost:27017", priority: 1, hidden: true})
 
 rs.addArb("SANGEETHA:3001") => add arbiter
+rs.addArb("localhost: 3001", true)
 rs.remove() => remove any machine
 
 
